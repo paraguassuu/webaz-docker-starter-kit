@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Escape Game Avignon - Carte de Base</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        #map { 
+            height: 500px; 
+            width: 100%;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        #info {
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .inventory-item {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 5px 10px;
+            margin: 5px;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+        .object-counter {
+            font-weight: bold;
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎮 Escape Game Avignon - Carte de Test</h1>
+        
+        <div id="map"></div>
+        
+        <div id="info">
+            <h3>📊 Statut du Jeu</h3>
+            <p>Objets chargés: <span id="object-count" class="object-counter">0</span></p>
+            <p>Inventaire: <span id="inventory-count">0</span> objets</p>
+            <div id="inventory"></div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        // Configuration de base
+        const CONFIG = {
+            API_URL: 'http://localhost:1234/api/objets',
+            MAP_CENTER: [43.9493, 4.8057],
+            MAP_ZOOM: 15
+        };
+
+        // Initialiser la carte
+        const map = L.map('map').setView(CONFIG.MAP_CENTER, CONFIG.MAP_ZOOM);
+        
+        // Ajouter la couche OpenStreetMap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap'
+        }).addTo(map);
+
+        // Icônes personnalisées par type d'objet
+        const iconColors = {
+            'recuperable': 'green',
+            'code': 'blue',
+            'bloque_code': 'orange',
+            'bloque_objet': 'red',
+            'final': 'purple'
+        };
+
+        // Inventaire du joueur
+        let inventory = [];
+
+        // Charger les objets depuis l'API
+        async function loadObjects() {
+            try {
+                const response = await fetch(CONFIG.API_URL);
+                const objects = await response.json();
+                
+                document.getElementById('object-count').textContent = objects.length;
+                
+                // Ajouter les marqueurs sur la carte
+                objects.forEach(obj => {
+                    const coords = obj.position.coordinates;
+                    const icon = L.divIcon({
+                        className: 'custom-marker',
+                        html: `<div style="background-color: ${iconColors[obj.type] || 'gray'}; 
+                               width: 20px; height: 20px; border-radius: 50%; 
+                               border: 2px solid white;"></div>`,
+                        iconSize: [20, 20]
+                    });
+                    
+                    const marker = L.marker([coords[1], coords[0]], { icon: icon }).addTo(map);
+                    
+                    // Popup d'information
+                    marker.bindPopup(`
+                        <div style="text-align: center;">
+                            <strong>${obj.nom}</strong><br>
+                            <em>Type: ${obj.type}</em><br>
+                            <small>ID: ${obj.id}</small>
+                        </div>
+                    `);
+                    
+                    // Gestion du clic sur le marqueur
+                    marker.on('click', function() {
+                        handleObjectClick(obj);
+                    });
+                });
+                
+                console.log(`${objects.length} objets chargés avec succès!`);
+                
+            } catch (error) {
+                console.error('Erreur lors du chargement des objets:', error);
+                document.getElementById('object-count').textContent = 'Erreur!';
+            }
+        }
+
+        // Gérer le clic sur un objet
+        function handleObjectClick(obj) {
+            alert(`Vous avez cliqué sur: ${obj.nom}\nType: ${obj.type}\nID: ${obj.id}`);
+            
+            if (obj.type === 'recuperable') {
+                addToInventory(obj);
+            }
+        }
+
+        // Ajouter un objet à l'inventaire
+        function addToInventory(obj) {
+            if (!inventory.find(item => item.id === obj.id)) {
+                inventory.push(obj);
+                updateInventoryDisplay();
+                alert(`🎉 ${obj.nom} ajouté à l'inventaire!`);
+            }
+        }
+
+        // Mettre à jour l'affichage de l'inventaire
+        function updateInventoryDisplay() {
+            const inventoryDiv = document.getElementById('inventory');
+            const countSpan = document.getElementById('inventory-count');
+            
+            countSpan.textContent = inventory.length;
+            inventoryDiv.innerHTML = '';
+            
+            inventory.forEach(item => {
+                const itemElement = document.createElement('div');
+                itemElement.className = 'inventory-item';
+                itemElement.textContent = item.nom;
+                itemElement.title = `Type: ${item.type}`;
+                inventoryDiv.appendChild(itemElement);
+            });
+        }
+
+        // Charger les objets au démarrage
+        loadObjects();
+    </script>
+</body>
+</html>
