@@ -1,0 +1,68 @@
+:root {
+    --color-background: #1a1a1d;
+    --color-surface: #212529;
+    --color-primary: #c09f5e;
+    --color-primary-hover: #d4b574;
+    --color-text-light: #f8f9fa;
+    --color-text-muted: #adb5bd;
+    --font-title: 'MedievalSharp', cursive;
+    --font-body: 'Work Sans', sans-serif;
+}
+
+body {
+    background-color: var(--color-background);
+    color: var(--color-text-light);
+    font-family: var(--font-body), serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header.navbar, footer {
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid #c09f5e33;
+    flex-shrink: 0;
+}
+
+footer {
+    border-bottom: none;
+    border-top: 1px solid #c09f5e33;
+}
+
+.navbar-brand, h1, h2, h5.modal-title, .sidebar-title {
+    font-family: var(--font-title), serif;
+    color: var(--color-primary);
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+
+main {
+    flex-grow: 1;
+}
+
+.btn-theme-primary {
+    background-color: var(--color-primary);
+    border-color: #b38f4d;
+    color: var(--color-background);
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+.btn-theme-primary:hover {
+    background-color: var(--color-primary-hover);
+    border-color: var(--color-primary);
+    color: var(--color-background);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(192, 159, 94, 0.2);
+}
+
+.btn-theme-secondary {
+    background-color: transparent;
+    border: 1px solid #c09f5e88;
+    color: var(--color-primary);
+    transition: all 0.3s ease;
+}
+.btn-theme-secondary:hover {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    border-color: var(--color-primary);
+}

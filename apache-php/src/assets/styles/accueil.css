@@ -1,0 +1,108 @@
+@import url('base.css');
+
+.hero-section {
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.hero-section .lead {
+    color: var(--color-text-muted);
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-icon {
+    font-size: 12rem;
+    color: var(--color-primary);
+    opacity: 0.15;
+    transform: rotate(-15deg);
+}
+
+.mission-section {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 3rem;
+    border-radius: 15px;
+    border: 1px solid #c09f5e33;
+}
+
+.mission-step {
+    text-align: center;
+    background-color: var(--color-surface);
+    padding: 2rem;
+    border-radius: 10px;
+    height: 100%;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.mission-step:hover {
+    transform: translateY(-5px);
+    border-color: #c09f5e88;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.mission-step .icon-wrapper {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    height: 50px;
+}
+
+.mission-step h5 {
+    font-family: var(--font-title), serif;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-text-light);
+}
+
+.mission-step p {
+    color: var(--color-text-muted);
+}
+
+.rules-content {
+    background-color: var(--color-surface);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid #c09f5e33;
+}
+
+.rule-item {
+    margin-bottom: 1rem;
+}
+
+.rule-item strong {
+    color: var(--color-primary);
+}
+
+.rule-item small {
+    color: white;
+}
+
+.rules-content h4 {
+    font-family: var(--font-title), serif;
+    color: var(--color-primary);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@media (min-width: 992px) {
+    .hero-section {
+        text-align: left;
+    }
+}
+@media (max-width: 768px) {
+ .hero-section .lead {
+        margin-left: 0;
+    }
+    .rules-section {
+        padding: 2rem 1rem;
+    }
+
+    .rules-card {
+        padding: 1.5rem;
+    }
+}

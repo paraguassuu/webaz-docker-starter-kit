@@ -1,0 +1,22 @@
+<layer>
+  <name>avignon_points</name>
+  <id>LayerInfoImpl--325b1269:19a8acc84d3:-7ffb</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl--325b1269:19a8acc84d3:-7ffa</id>
+  </defaultStyle>
+  <styles class="linked-hash-set">
+    <style>
+      <id>StyleInfoImpl--325b1269:19a8acc84d3:-7ffa</id>
+    </style>
+  </styles>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl--325b1269:19a8acc84d3:-7ffc</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2025-11-16 03:59:50.879 UTC</dateCreated>
+  <dateModified>2025-11-16 04:31:50.293 UTC</dateModified>
+</layer>

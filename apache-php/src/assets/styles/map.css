@@ -1,0 +1,116 @@
+@import url('base.css');
+
+.game-container {
+    display: flex;
+    height: calc(100vh - 76px);
+    position: relative;
+}
+
+.map-wrapper {
+    flex: 1;
+    position: relative;
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+}
+
+.leaflet-container {
+    height: 100%;
+    width: 100%;
+}
+
+.sidebar {
+    width: 300px;
+    background-color: var(--color-surface);
+    border-left: 1px solid #c09f5e33;
+    padding: 1.5rem;
+    overflow-y: auto;
+}
+
+.sidebar-title {
+    font-family: var(--font-title), serif;
+    color: var(--color-primary);
+    font-size: 1.25rem;
+}
+
+.icon-inventory {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.score-badge {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+
+.heatmap-switch {
+    background-color: rgba(192, 159, 94, 0.3) !important;
+    border: 1px solid #c09f5e88 !important;
+    width: 5em;
+    height: 1.2em;
+}
+
+.heatmap-switch:checked {
+    background-color: var(--color-primary) !important;
+    border-color: var(--color-primary) !important;
+}
+
+.heatmap-switch:focus {
+    box-shadow: 0 0 0 0.2rem rgba(192, 159, 94, 0.25) !important;
+}
+
+.heatmap-switch::before {
+    background-color: var(--color-text-light) !important;
+}
+
+.form-check-label {
+    font-size: 0.8rem;
+    color: var(--color-text-light) !important;
+    margin-left: 0.5rem;
+}
+.modal-content {
+    background-color: var(--color-surface);
+    border: 1px solid #c09f5e33;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.modal-header {
+    border-bottom: 1px solid #c09f5e33;
+    border-radius: 15px 15px 0 0 !important;
+}
+
+.modal-title {
+    font-family: var(--font-body), serif;
+    color: var(--color-primary);
+}
+
+.modal-body {
+    color: var(--color-text-light);
+}
+
+@media (max-width: 768px) {
+    .game-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .sidebar {
+        width: 100%;
+        border-left: none;
+        border-top: 1px solid #c09f5e33;
+        max-height: 200px;
+    }
+
+    .map-wrapper {
+        height: 60vh;
+    }
+}

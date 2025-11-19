@@ -1,0 +1,45 @@
+@import url('base.css');
+
+.score-card {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    padding: 2.5rem;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    border: 1px solid #c09f5e33;
+}
+
+.trophy-icon {
+    font-size: 3rem;
+}
+
+.score-list .score-item {
+    background-color: transparent;
+    border-color: #c09f5e33;
+    color: var(--color-text-light);
+    padding: 1rem 1.5rem;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.score-list .score-item:hover {
+    background-color: rgba(192, 159, 94, 0.1);
+}
+
+.rank-badge {
+    font-size: 1.5rem;
+    width: 50px;
+    text-align: center;
+    margin-right: 1.5rem;
+    color: var(--color-primary);
+}
+
+.player-name {
+    font-weight: bold;
+}
+
+.player-score {
+    font-weight: bold;
+    color: var(--color-primary);
+}
