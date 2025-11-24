@@ -46,7 +46,7 @@ Vue.createApp({
                 this.map.invalidateSize();
             }, 50);
             this.map.on('zoomend', this.refreshMarkerVisibility);
-            this.heatmapLayer = L.tileLayer.wms('http://localhost:8080/geoserver/wms', {
+            this.heatmapLayer = L.tileLayer.wms('http://localhost:8081/geoserver/wms', {
                 layers: 'avignon_heatmap:avignon_points',
                 format: 'image/png',
                 opacity: 0,

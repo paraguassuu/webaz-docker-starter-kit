@@ -1,0 +1,77 @@
+<StyledLayerDescriptor version="1.0.0">
+  <NamedLayer>
+    <Name>regions_statistics</Name>
+    <UserStyle>
+      <Title>Style bas&#233; sur la moyenne</Title>
+      <FeatureTypeStyle/>
+      <FeatureTypeStyle>
+        <Rule>
+          <Filter>
+            <PropertyIsGreaterThanOrEqualTo propertyName="moyenne_region" literal="Moyenne &gt; 15"/>
+          </Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#800026</CssParameter>
+            </Fill>
+            <Stroke/>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Filter>
+            <PropertyIsGreaterThanOrEqualTo propertyName="moyenne_region" literal="Moyenne &gt; 12"/>
+          </Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#BD0026</CssParameter>
+            </Fill>
+            <Stroke/>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Filter>
+            <PropertyIsGreaterThanOrEqualTo propertyName="moyenne_region" literal="Moyenne &gt; 10"/>
+          </Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#E31A1C</CssParameter>
+            </Fill>
+            <Stroke/>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Filter>
+            <PropertyIsGreaterThanOrEqualTo propertyName="moyenne_region" literal="Moyenne &gt; 8"/>
+          </Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#FC4E2A</CssParameter>
+            </Fill>
+            <Stroke/>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Filter>
+            <PropertyIsGreaterThanOrEqualTo propertyName="moyenne_region" literal="Moyenne &gt; 5"/>
+          </Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#FD8D3C</CssParameter>
+            </Fill>
+            <Stroke/>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Filter>
+            <PropertyIsGreaterThanOrEqualTo propertyName="moyenne_region" literal="Moyenne &#8804; 5"/>
+          </Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#FEB24C</CssParameter>
+            </Fill>
+            <Stroke/>
+          </PolygonSymbolizer>
+        </Rule>
+      </FeatureTypeStyle>
+    </UserStyle>
+  </NamedLayer>
+</StyledLayerDescriptor>

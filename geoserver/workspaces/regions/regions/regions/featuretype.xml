@@ -1,0 +1,70 @@
+<featureType>
+  <id>FeatureTypeInfoImpl-32990e9a:19408629f62:-7fb3</id>
+  <name>regions</name>
+  <nativeName>regions_statistics</nativeName>
+  <namespace>
+    <id>NamespaceInfoImpl-32990e9a:19408629f62:-7fb5</id>
+  </namespace>
+  <title>regions</title>
+  <keywords>
+    <string>features</string>
+    <string>regions_statistics</string>
+  </keywords>
+  <nativeCRS class="projected">PROJCS[&quot;RGF93 / Lambert-93&quot;, &#xd;
+  GEOGCS[&quot;RGF93&quot;, &#xd;
+    DATUM[&quot;Reseau Geodesique Francais 1993&quot;, &#xd;
+      SPHEROID[&quot;GRS 1980&quot;, 6378137.0, 298.257222101, AUTHORITY[&quot;EPSG&quot;,&quot;7019&quot;]], &#xd;
+      TOWGS84[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], &#xd;
+      AUTHORITY[&quot;EPSG&quot;,&quot;6171&quot;]], &#xd;
+    PRIMEM[&quot;Greenwich&quot;, 0.0, AUTHORITY[&quot;EPSG&quot;,&quot;8901&quot;]], &#xd;
+    UNIT[&quot;degree&quot;, 0.017453292519943295], &#xd;
+    AXIS[&quot;Geodetic longitude&quot;, EAST], &#xd;
+    AXIS[&quot;Geodetic latitude&quot;, NORTH], &#xd;
+    AUTHORITY[&quot;EPSG&quot;,&quot;4171&quot;]], &#xd;
+  PROJECTION[&quot;Lambert_Conformal_Conic_2SP&quot;, AUTHORITY[&quot;EPSG&quot;,&quot;9802&quot;]], &#xd;
+  PARAMETER[&quot;central_meridian&quot;, 3.0], &#xd;
+  PARAMETER[&quot;latitude_of_origin&quot;, 46.5], &#xd;
+  PARAMETER[&quot;standard_parallel_1&quot;, 49.0], &#xd;
+  PARAMETER[&quot;false_easting&quot;, 700000.0], &#xd;
+  PARAMETER[&quot;false_northing&quot;, 6600000.0], &#xd;
+  PARAMETER[&quot;scale_factor&quot;, 1.0], &#xd;
+  PARAMETER[&quot;standard_parallel_2&quot;, 44.0], &#xd;
+  UNIT[&quot;m&quot;, 1.0], &#xd;
+  AXIS[&quot;Easting&quot;, EAST], &#xd;
+  AXIS[&quot;Northing&quot;, NORTH], &#xd;
+  AUTHORITY[&quot;EPSG&quot;,&quot;2154&quot;]]</nativeCRS>
+  <srs>EPSG:2154</srs>
+  <nativeBoundingBox>
+    <minx>99040.0</minx>
+    <maxx>1242440.3</maxx>
+    <miny>6046546.3</miny>
+    <maxy>7110478.8</maxy>
+    <crs class="projected">EPSG:2154</crs>
+  </nativeBoundingBox>
+  <latLonBoundingBox>
+    <minx>-5.524375344645368</minx>
+    <maxx>10.699829085614331</maxx>
+    <miny>41.275648651697274</miny>
+    <maxy>51.08912092998867</maxy>
+    <crs>EPSG:4326</crs>
+  </latLonBoundingBox>
+  <projectionPolicy>FORCE_DECLARED</projectionPolicy>
+  <enabled>true</enabled>
+  <metadata>
+    <entry key="cachingEnabled">false</entry>
+  </metadata>
+  <store class="dataStore">
+    <id>DataStoreInfoImpl-32990e9a:19408629f62:-7fb4</id>
+  </store>
+  <serviceConfiguration>false</serviceConfiguration>
+  <simpleConversionEnabled>false</simpleConversionEnabled>
+  <internationalTitle/>
+  <internationalAbstract/>
+  <maxFeatures>0</maxFeatures>
+  <numDecimals>0</numDecimals>
+  <padWithZeros>false</padWithZeros>
+  <forcedDecimal>false</forcedDecimal>
+  <overridingServiceSRS>false</overridingServiceSRS>
+  <skipNumberMatched>false</skipNumberMatched>
+  <circularArcPresent>false</circularArcPresent>
+</featureType>

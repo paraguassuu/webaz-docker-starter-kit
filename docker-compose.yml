@@ -1,8 +1,9 @@
 services:
   web:
+    container_name: web
     build: ./apache-php
     ports:
-      - "1234:80"
+      - "8989:80"
     volumes:
       - ./apache-php/src:/var/www/html
     depends_on:
@@ -10,6 +11,7 @@ services:
 
   db:
     image: postgis/postgis:17-3.5
+    container_name: db
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
@@ -20,6 +22,7 @@ services:
 
   pgadmin:
     image: dpage/pgadmin4
+    container_name: pgadmin
     environment:
       PGADMIN_DEFAULT_EMAIL: admin@admin.com
       PGADMIN_DEFAULT_PASSWORD: admin
@@ -31,14 +34,15 @@ services:
       - db
 
   geoserver:
-    image: kartoza/geoserver
+    image: oscarfonts/geoserver
+    container_name: geoserver
     environment:
       GEOSERVER_ADMIN_USER: admin
       GEOSERVER_ADMIN_PASSWORD: geoserver
     ports:
-      - "8080:8080"
+      - "8081:8080"
     volumes:
-      - geoserver_data:/opt/geoserver/data_dir
+      - ./geoserver:/var/local/geoserver
 
 volumes:
   pg_data:

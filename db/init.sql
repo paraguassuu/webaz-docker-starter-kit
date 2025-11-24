@@ -111,3 +111,11 @@ INSERT INTO objets (id, nom, enigme, icone_id, point_id, min_zoom_visible, depar
 (7, 'Carte des Tunnels', 'Une carte jaunie détaillant d''anciens passages sous la ville, avec une étrange séquence de chiffres.', 7, 7, 16, false, 'code', '5678', NULL, NULL, 'Les quatre points cardinaux de mon créateur guident vers le secret.', false),
 (8, 'Journal d''Adalf', 'Le journal perdu du cardinal Adalf. Ses secrets sont protégés par une dernière énigme.', 8, 8, 16, false, 'bloque_par_code', NULL, 7, 9, NULL, false),
 (9, 'Relique Finale', 'La Relique de Rédemption ! Sa lumière pure est prête à lever la malédiction.', 9, 9, 18, false, 'final', NULL, NULL, NULL, NULL, false);
+
+
+INSERT INTO players (pseudo, score) VALUES
+('Atac', 120),
+('Avanturier', 150),
+('Vini', 125),
+('ASk', 100),
+('FIB', 90);

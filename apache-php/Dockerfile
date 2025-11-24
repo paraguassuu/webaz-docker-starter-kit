@@ -8,6 +8,7 @@ RUN a2enmod rewrite
 
 # Copier le code source
 COPY src/ /var/www/html/
+#COPY workspaces /var/www/html/workspaces
 
 # Droits
 RUN chown -R www-data:www-data /var/www/html

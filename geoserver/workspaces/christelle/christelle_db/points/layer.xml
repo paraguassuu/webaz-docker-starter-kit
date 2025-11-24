@@ -1,0 +1,17 @@
+<layer>
+  <name>points</name>
+  <id>LayerInfoImpl--325b1269:19a8acc84d3:-5a14</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl--570ae188:124761b8d78:-7fdf</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl--325b1269:19a8acc84d3:-5a15</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2025-11-17 19:29:36.870 UTC</dateCreated>
+  <dateModified>2025-11-17 19:30:07.323 UTC</dateModified>
+</layer>
